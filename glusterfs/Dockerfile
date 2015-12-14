@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
   net-tools \
   sudo \
   wget \
-  vim \
   lsb-release \
   && rm -rf /var/lib/apt/lists/*
 
@@ -20,7 +19,7 @@ RUN \
   echo "deb-src http://ppa.launchpad.net/gluster/glusterfs-3.6/ubuntu precise main" >> /etc/apt/sources.list.d/gluster.list \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FE869A9 \
   apt-get update && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -y glusterfs-server attr
+  DEBIAN_FRONTEND=noninteractive apt-get install -y glusterfs-server
 
 # Define mountable directories.
 VOLUME ["/glusterfs-storage"]
