@@ -2,7 +2,7 @@ FROM ubuntu:12.04
 
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
-RUN apt-get update && apt-get install -yq \
+RUN apt-get update && apt-get install -yq --no-install-recommends \
   make \
   ca-certificates \
   net-tools \
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -yq \
   wget \
   vim \
   lsb-release \
-  --no-install-recommends
+  && rm -rf /var/lib/apt/lists/*
 
 # Set locale
 RUN locale-gen en_US.UTF-8
