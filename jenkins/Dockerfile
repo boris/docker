@@ -1,3 +1,4 @@
+FROM ubuntu:12.04
 FROM jenkins
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
