@@ -15,7 +15,7 @@ RUN apk update
 RUN apk add irssi
 RUN mkdir /irssi
 
-COPY config.example $CONFIG
+COPY config $CONFIG
 WORKDIR $HOME
 USER irc-user
 CMD ["irssi"]
