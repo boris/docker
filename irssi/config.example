@@ -15,3 +15,14 @@ chatnets = {
     nick = "my_irc_nick";
   }
 }
+
+channels = (
+  { name = "#docker"; chatnet = "Freenode"; autojoin = "Yes"; }
+)
+
+settings = {
+  "fe-common/core" = {
+    theme = "solarized-universal";
+    hilight_color = "= %R";
+  };
+};
