@@ -1,4 +1,4 @@
-# docker run -ti boris/irssi:1.0
+# docker run -ti boris/irssi
 
 FROM alpine:latest
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
@@ -16,7 +16,7 @@ RUN apk update
 RUN apk add irssi
 RUN mkdir /irssi
 
-COPY config $CONFIG
+COPY config.example $CONFIG
 COPY solarized-universal.theme $THEME
 WORKDIR $HOME
 USER irc-user
