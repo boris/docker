@@ -5,5 +5,7 @@ $ docker run --name mysql-dev -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:
 
 Then, start the container from the directory where your rails code is:
 ```
-docker run -tiP --name rails-dev -v `pwd`:/app boris/rails-development:1.0 /bin/bash
+$ docker run -tiP --name rails-dev -v `pwd`:/app boris/rails-development:1.0 /bin/bash
 ```
+
+After that, use the environment as usual.
