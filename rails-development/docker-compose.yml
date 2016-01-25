@@ -1,0 +1,14 @@
+app:
+  build: .
+  container_name: rails-dev
+  command: /bin/bash
+  volumes:
+    - /app
+  ports:
+    - "3000:3000"
+  links:
+    - mysql-dev
+mysql-dev:
+  image: mysql:5.5
+  ports:
+    - "3306"
