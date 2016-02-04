@@ -9,7 +9,7 @@ RUN apk --update add  \
   ruby-dev \
   screen \
   git \
-  io-console \
+  ruby-io-console \
   && rm -rf /usr/share/ri
 
 RUN mkdir -p /app
