@@ -1,21 +1,15 @@
-FROM ruby:2.2
+FROM alpine:edge
 
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
-RUN apt-get update && apt-get install -y \
-  build-essential \
-  locales \
-  nodejs
-
-# Use en_US.UTF-8 as our locale
-RUN locale-gen en_US.UTF-8 
-ENV LANG en_US.UTF-8 
-ENV LANGUAGE en_US:en 
-ENV LC_ALL en_US.UTF-8
+RUN apk --update add  \
+  ca-certificates \
+  ruby \
+  ruby-bundler \
+  ruby-dev \
+  screen \
+  && rm -rf /usr/share/ri
 
 RUN mkdir -p /app
 WORKDIR /app
 
-RUN gem install bundler
-
-EXPOSE 3000
