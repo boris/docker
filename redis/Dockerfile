@@ -1,6 +1,6 @@
 # To run:
 # docker run -d -p 6379:6379 boris/prey_redis:2.6.14 redis-server
-FROM ubuntu:12.04
+FROM debian:jessie
 MAINTAINER Boris Quiroz <boris@preyhq.com>
 
 RUN groupadd -r redis && useradd -r -g redis redis
@@ -32,10 +32,9 @@ RUN buildDeps='gcc libc6-dev make' \
   && rm redis.tar.gz \
   && make -C /usr/src/redis \
   && make -C /usr/src/redis install \
-#  && ln -s redis-server "$(dirname "$(which redis-server)")/redis-server" \
-#  && rm -r /usr/src/redis \
   && apt-get purge -y --auto-remove $buildDeps
 
+RUN echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
 RUN mkdir /data && chown redis:redis /data
 VOLUME /data
 WORKDIR /data
