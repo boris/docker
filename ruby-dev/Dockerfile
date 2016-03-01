@@ -1,4 +1,4 @@
-FROM ruby:2.1
+FROM boris/ruby:2.2.0
 
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
@@ -14,6 +14,6 @@ WORKDIR /app
 
 COPY . ./
 
-EXPOSE 3000
+EXPOSE 9292
 
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
