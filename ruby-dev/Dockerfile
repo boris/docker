@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -q -y \
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY Gemfile Gemfile.lock ./
-RUN gem install bundler && bundle install
+#COPY Gemfile Gemfile.lock ./
+#RUN gem install bundler && bundle install
 
 COPY . ./
 
