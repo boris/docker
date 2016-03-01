@@ -10,6 +10,7 @@ RUN apk --update add  \
   screen \
   git \
   ruby-io-console \
+  alpine-sdk \
   && rm -rf /usr/share/ri
 
 RUN mkdir -p /app
