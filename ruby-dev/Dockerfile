@@ -1,4 +1,4 @@
-FROM boris/ruby:2.2.0
+FROM boris/ruby:2.2.2
 
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
