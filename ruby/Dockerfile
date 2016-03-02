@@ -8,7 +8,7 @@ RUN mkdir -p /usr/local/etc \
 	} >> /usr/local/etc/gemrc
 
 ENV RUBY_MAJOR 2.2
-ENV RUBY_VERSION 2.2.0
+ENV RUBY_VERSION 2.2.2
 ENV RUBYGEMS_VERSION 2.6.0
 
 # some of ruby's build scripts are written in ruby
