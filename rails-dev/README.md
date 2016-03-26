@@ -1,4 +1,4 @@
-Starting on tag 1.0, you'll need a different container running MySQL
+Starting on tag 1.1, you'll need a different container running MySQL
 ```
 $ docker run --name mysql-dev -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.5
 ```

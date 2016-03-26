@@ -1,3 +1,4 @@
+# docker run -tiP --name rails-dev -v `pwd`:/app boris/rails-dev /bin/bash
 FROM ruby:2.2
 
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
