@@ -1,3 +1,4 @@
+# docker run -ti -e EMAIL="your@email.com" -e NAME="Your Name" boris/mutt:latest
 FROM debian:jessie
 
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
