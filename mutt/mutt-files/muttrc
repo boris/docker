@@ -1,12 +1,12 @@
 # Me
-set from = "USER@DOMAIN"
-set realname = "USER NAME"
+set from = "%FROM%"
+set realname = "%NAME%"
 
 # Credentials
-set smtp_url = "smtp://USER@DOMAIN@smtp.gmail.com:587/"
-set smtp_pass = "PASSWORD"
-set imap_user = "USER@DOMAIN"
-set imap_pass = "PASSWORD"
+set smtp_url = "smtp://%EMAIL%@smtp.gmail.com:587/"
+set smtp_pass = ""
+set imap_user = "%EMAIL%"
+set imap_pass = ""
 
 # Mailboxes
 set folder = "imaps://imap.gmail.com:993"
@@ -26,6 +26,22 @@ set sort = threads
 set editor = "vim"
 set sidebar_visible = no
 set signature = "~/.mutt/signature"
+bind pager <up> previous-line
+bind pager <down> next-line
+set resolve = no
+
+# Gmail-style keyboard shortcuts
+macro index,pager Gi "<change-folder>=INBOX<enter>" "Go to Inbox"
+macro index,pager Ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to All Mail"
+macro index,pager Gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to Drafts"
+macro index,pager Gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
+
+macro index,pager a "<enter-command>unset resolve<enter><enter-command>unset trash<enter><clear-flag>N<enter-command>set resolve<enter><delete-message><enter>"
+macro index,pager d ";s+[Gmail]/Trash<enter><enter>" "Trash"
+macro index,pager u ";s+INBOX<enter><enter>" "Move to Inbox"
+macro index,pager !  <save-message>=[Gmail]/Spam<enter><enter> "Report spam"
+macro index,pager +  <save-message>=[Gmail]/Important<enter><enter> "Mark as Important"
+macro index,pager *  <save-message>=[Gmail]/Starred<enter><enter> "Star Message"
 
 # Theme
 source ~/.mutt/mutt-colors.muttrc
