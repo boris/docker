@@ -1,0 +1,31 @@
+# Me
+set from = "USER@DOMAIN"
+set realname = "USER NAME"
+
+# Credentials
+set smtp_url = "smtp://USER@DOMAIN@smtp.gmail.com:587/"
+set smtp_pass = "PASSWORD"
+set imap_user = "USER@DOMAIN"
+set imap_pass = "PASSWORD"
+
+# Mailboxes
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+
+# Where to put the stuff
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+# Etc
+set mail_check = 3
+set move = no
+set imap_keepalive = 900
+set sort = threads
+set editor = "vim"
+set sidebar_visible = no
+set signature = "~/.mutt/signature"
+
+# Theme
+source ~/.mutt/mutt-colors.muttrc
