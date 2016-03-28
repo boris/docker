@@ -29,6 +29,10 @@ set signature = "~/.mutt/signature"
 bind pager <up> previous-line
 bind pager <down> next-line
 set resolve = no
+auto_view text/html
+
+# Example using mailcap. I'm not using it.
+#set mailcap_path = ~/.mutt/mailcap
 
 # Gmail-style keyboard shortcuts
 macro index,pager Gi "<change-folder>=INBOX<enter>" "Go to Inbox"
