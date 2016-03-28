@@ -6,9 +6,13 @@ MAINTAINER Boris Quiroz <boris@insert-coin.org>
 RUN groupadd -g 1000 user \
   && useradd --create-home -d /home/user -g user -u 1000 user
 
+# Uncomment in case you use mailcap
+#RUN mkdir /home/user/tmp ; chown -R user:user /home/user/tmp
+
 RUN apt-get update && apt-get install -y \
   ca-certificates \
   mutt-patched \
+#  elinks \
   vim-common \
   --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
