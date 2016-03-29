@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
   ca-certificates \
   mutt-patched \
 #  elinks \
-  vim-common \
+  vim \
   --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
