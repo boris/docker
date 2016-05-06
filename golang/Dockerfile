@@ -1,11 +1,16 @@
 FROM alpine
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
-RUN apk add go git vim --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted
+RUN apk add go git vim zsh --update-cache \ 
+  --repository http://dl-3.alpinelinux.org/alpine/edge/community/ \
+  --allow-untrusted \
+  && rm -rf /var/cache/apk/*
 
 RUN echo "set tabstop=4" >> /etc/vim/vimrc
+RUN echo "PROMPT='[%n@golang:%/]%# '" >> /root/.zshrc
 RUN mkdir /go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:$PATH
 
 WORKDIR $GOPATH
+ENTRYPOINT ["zsh"]
