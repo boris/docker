@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 sysctl -w kernel.shmmax=17179869184
-/opt/chef-server/embedded/bin/runsvdir-start &
+/opt/opscode/embedded/bin/runsvdir-start &
 
 if [ x"$(hostname)" != x"$(grep server_name /etc/chef-server/chef-server-running.json | sed 's/.*\"\(.*\)\".*\"\(.*\)\".*/\2/')" ]; then
 	echo "Hostname changed, chef-server must be reconfigured"
