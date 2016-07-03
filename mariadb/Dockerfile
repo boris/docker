@@ -1,4 +1,4 @@
-# docker run -d -p 3306:3306 boris/mysql:latest
+# docker run -d -p 3306:3306 boris/mariadb:latest
 FROM alpine:latest
 
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
