@@ -18,7 +18,8 @@ services:
     links:
       - database
     ports:
-      - "8000:80"
+      - "80:80"
+    privileged: true
     restart: always
     environment:
       WORDPRESS_DB_HOST: database:3306
