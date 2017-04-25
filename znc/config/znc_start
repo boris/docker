@@ -1,4 +1,5 @@
 #!/bin/bash
 set -e
 
-znc
+echo "running znc server"
+exec znc 
