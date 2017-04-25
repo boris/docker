@@ -24,11 +24,10 @@ RUN echo 'znc ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 WORKDIR /home/znc
 
 COPY config/znc_config /usr/local/bin/
+COPY config/znc_start /usr/local/bin/
 RUN chmod a+x /usr/local/bin/*
 VOLUME ["/home/znc/.znc"]
 
 USER znc
 EXPOSE 31337
 
-COPY entrypoint.sh /home/znc/entrypoint.sh
-ENTRYPOINT  ["/home/znc/entrypoint.sh"]
