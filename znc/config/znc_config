@@ -2,4 +2,4 @@
 set -e
 sudo chown -R znc:znc /home/znc/.znc
 znc --makeconf
-sudo '/znc/d' /etc/sudoers
+sudo sed '/znc/d' /etc/sudoers
