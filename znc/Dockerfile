@@ -28,6 +28,8 @@ COPY config/znc_start /usr/local/bin/
 RUN chmod a+x /usr/local/bin/*
 VOLUME ["/home/znc/.znc"]
 
+CMD ["znc_start"]
+
 USER znc
 EXPOSE 31337
 
