@@ -2,4 +2,4 @@
 set -e
 
 echo "running znc server"
-exec znc 
+exec znc -f -d /home/znc/.znc
