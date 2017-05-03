@@ -7,6 +7,6 @@ RUN apt-get update && apt-get install -yq bundler \
 
 EXPOSE 8080
 
-RUN adduser -ms /bin/bash deploy
+RUN useradd -ms /bin/bash deploy
 USER deploy
 WORKDIR /home/deploy
