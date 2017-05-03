@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -yq bundler \
   build-essential \
   unicorn
 
+RUN gem install bundler
+
 EXPOSE 8080
 
 RUN useradd -ms /bin/bash deploy
