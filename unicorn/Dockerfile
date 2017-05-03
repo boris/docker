@@ -5,8 +5,10 @@ RUN apt-get update && apt-get install -yq bundler \
   build-essential \
   unicorn \
   libmysqlclient-dev \
-  ruby-mysql2
+  ruby-mysql2 \
+  nodejs
 
+RUN mkdir /tmp/log ; chown -R deploy:deploy /tmp/log
 RUN gem install bundler uglifier
 
 EXPOSE 8080
