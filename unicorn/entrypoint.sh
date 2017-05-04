@@ -6,4 +6,4 @@ BUNDLE=`bundle install --path vendor/bundle`
 cd $APP_ROOT
 $BUNDLE
 cd ..
-unicorn -c config/unicorn.rb
+RAILS_ENV=production unicorn -c /home/deployapp/config/unicorn.rb
