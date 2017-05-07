@@ -23,7 +23,5 @@ RUN mkdir /tmp/log ; chown -R deploy:deploy /tmp/log
 RUN mkdir $APP_ROOT ; chown -R deploy:deploy $APP_ROOT
 
 WORKDIR $APP_ROOT
-#RUN cd $APP_ROOT ; bundle install --path vendor/bundle ; cd $HOME
-#CMD ["unicorn", "-c", "config/unicorn.rb"]
 COPY entrypoint.sh $HOME/entrypoint.sh
-#ENTRYPOINT ["/home/deploy/entrypoint.sh"]
+ENTRYPOINT ["/home/deploy/entrypoint.sh"]
