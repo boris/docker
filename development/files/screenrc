@@ -1,0 +1,28 @@
+# Author: Boris Quiroz - bq@zsh.io
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#termcapinfo xterm|xterms|xs|rxvt ti@:te@
+defbce "on"
+#shell $SHELL
+term xterm-256color
+defscrollback 300000
+hardstatus alwayslastline 
+hardstatus string '%{= d} %-w%{= r}[%{= M}%n %t%{= r}]%{= d}%+w %-= %{M}%H%{M} [%D, %M %d %Y %{= C}%C%A%{-}]'
+#hardstatus string '%{= rd} %-w[%{= Y}%n %t%{= r}]%{= d}%+w %-= %H [%D, %M %d %Y%C%a]'
+
+# Clear screen on exit
+altscreen on
+
+# Mouse, wheee!!
+termcapinfo xterm* ti@:te@
+
+# Start on screen 1
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10                                                            
+screen 1
+
+# Visual Bell
+vbell on
+vbell_msg "PING!"
+vbellwait 5
