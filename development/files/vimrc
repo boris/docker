@@ -3,6 +3,7 @@ syntax on
 
 " Some basic stuffs
 set ai
+set incsearch
 set hlsearch
 set showmatch
 set ignorecase
@@ -10,4 +11,6 @@ set ruler
 set number
 set title
 
-
+" Tabs
+set shiftwidth=2
+set softtabstop=2
