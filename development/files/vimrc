@@ -1,0 +1,13 @@
+" Everybody likes colors!
+syntax on
+
+" Some basic stuffs
+set ai
+set hlsearch
+set showmatch
+set ignorecase
+set ruler
+set number
+set title
+
+
