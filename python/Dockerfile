@@ -1,7 +1,6 @@
-FROM python:2.7
+FROM alpine:edge
 
-RUN apt-get update
-RUN apt-get install -y python-setuptools
-RUN easy_install virtualenv
-RUN easy_install virtualenvwrapper
-
+RUN apk add --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
+  gdal \
+  py-gdal \
+  && rm -rf /var/cache/apk/*
