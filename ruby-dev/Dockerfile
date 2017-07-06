@@ -1,4 +1,4 @@
-FROM boris/ruby:2.2.2
+FROM boris/ruby:slim
 
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
