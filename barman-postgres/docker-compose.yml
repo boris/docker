@@ -1,7 +1,15 @@
-version: '3'
+version: '3.3'
 services:
   database:
     image: postgres:9.6-alpine
+    environment:
+      PGDATA: /pgdata
+      POSTGRES_USER: ppagos
+      POSTGRES_PASSWORD: ppagos_pass
+      POSTGRES_DB: ppagos
     ports:
-      - 54321:5432
+      - 5432:5432
+    volumes:
+      - /tmp/database:/var/lib/postgresql/data
+
 
