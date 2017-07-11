@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  database:
+    image: postgres:9.6-alpine
+    ports:
+      - 54321:5432
+
