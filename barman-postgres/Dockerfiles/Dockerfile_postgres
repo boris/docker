@@ -1,0 +1,6 @@
+FROM postgres:9.6
+
+COPY files/docker-entrypoint-postgres.sh /usr/local/bin
+
+EXPOSE 5432
+CMD ["/docker-entrypoint.sh", "postgres"]
