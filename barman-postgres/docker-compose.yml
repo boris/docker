@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   database:
-    image: postgres:9.6-alpine
+    image: postgres:latest
     environment:
       PGDATA: /pgdata
       POSTGRES_USER: ppagos
