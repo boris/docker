@@ -10,13 +10,7 @@ services:
       - 54321:5432
     volumes:
       - db:/var/lib/postgres/data
-#  barman:
-#    image: debian:stretch
-#    environment:
-#      FOO: bar
 
 volumes:
   db:
     external: true
-#  barman:
-#    external: false
