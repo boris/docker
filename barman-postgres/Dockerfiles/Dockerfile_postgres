@@ -1,6 +1,7 @@
 FROM postgres:9.6
 
 COPY files/docker-entrypoint-postgres.sh /usr/local/bin
+COPY files/*.conf /etc/postgresql/
 
 EXPOSE 5432
-CMD ["/docker-entrypoint.sh", "postgres"]
+CMD ["/docker-entrypoint.sh", "postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
