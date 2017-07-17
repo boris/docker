@@ -1,12 +1,22 @@
 version: '3.3'
 services:
   database:
-    image: postgres:9.6-alpine
+    image: postgres-custom:9.6
     environment:
       POSTGRES_USER: ppagos
       POSTGRES_PASSWORD: ppagos_pass
       POSTGRES_DB: ppagos
     ports:
       - 54321:5432
+    volumes:
+      - db:/var/lib/postgres/data
+#  barman:
+#    image: debian:stretch
+#    environment:
+#      FOO: bar
 
-
+volumes:
+  db:
+    external: true
+#  barman:
+#    external: false
