@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  database:
+    image: postgres-custom:9.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: demo
+    ports:
+      - 5432:5432
+    volumes:
+      - db:/var/lib/postgres/data
+      - /Users/boris/Code/docker/barman-postgres/data:/tmp/data
+
+volumes:
+  db:
+    external: true
