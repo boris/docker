@@ -1,5 +1,6 @@
 var http = require("http");
 const os = require("os");
+var iface = os.networkInterfaces();
 
 http.createServer(function (request, response) {
 
