@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.5
 LABEL maintainer "boris@insert-coin.org"
 
 RUN apk --update add nginx && \
@@ -8,6 +8,8 @@ RUN apk --update add nginx && \
       chown -R www:www /var/lib/nginx && \
       chown -R www:www /www && \
       chown -R www:www /run/nginx
+
+COPY default.conf /etc/nginx/conf.d
 
 EXPOSE 80
 
