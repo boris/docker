@@ -26,9 +26,9 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
-  - job_name: 'docker OS X'
+  - job_name: 'swarm-controller-0'
          # metrics_path defaults to '/metrics'
          # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ['192.168.65.1:9323']
+      - targets: ['10.30.30.86:9323']
