@@ -6,11 +6,13 @@ services:
       - 9090:9090
     volumes:
       - prometheus-data:/prometheus
-      - ./prometheus/:/etc/prometheus
   grafana:
     image: grafana/grafana
     ports:
       - 3000:3000
+    volumes:
+      - grafana-data:/var/lib/grafana
 
 volumes:
   prometheus-data:
+  grafana-data:
