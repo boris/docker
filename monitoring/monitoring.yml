@@ -1,7 +1,7 @@
 version: '3'
 services:
   prometheus:
-    image: prom/prometheus
+    image: 266822543819.dkr.ecr.us-east-1.amazonaws.com/unholsters:prometheus
     ports:
       - 9090:9090
     volumes:
