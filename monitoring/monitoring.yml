@@ -20,6 +20,10 @@ services:
     image: 266822543819.dkr.ecr.us-east-1.amazonaws.com/unholsters:nginx-1.10.3
     ports:
       - 80:80
+  pushgateway:
+    image: prom/pushgateway
+    ports:
+      - 9091:9091
 
 volumes:
   prometheus-data:
