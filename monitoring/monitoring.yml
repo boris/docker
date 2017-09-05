@@ -6,12 +6,20 @@ services:
       - 9090:9090
     volumes:
       - prometheus-data:/prometheus
+    command: "-config.file=/etc/prometheus/prometheus.yml -web.external-url=http://foo.bar:9000/prometheus/"
   grafana:
     image: grafana/grafana
     ports:
       - 3000:3000
+    environment:
+      - GF_SERVER_DOMAIN=foo.bar
+      - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s:/grafana
     volumes:
       - grafana-data:/var/lib/grafana
+  nginx:
+    image: 266822543819.dkr.ecr.us-east-1.amazonaws.com/unholsters:nginx-1.10.3
+    ports:
+      - 80:80
 
 volumes:
   prometheus-data:
