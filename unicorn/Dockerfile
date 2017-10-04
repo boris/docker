@@ -17,11 +17,11 @@ RUN gem install bundler uglifier tzinfo-data
 EXPOSE 8080
 
 RUN useradd -ms /bin/bash deploy
-USER deploy
 
-RUN mkdir /tmp/log ; chown -R deploy:deploy /tmp/log
+RUN mkdir /log ; chown -R deploy:deploy /log
 RUN mkdir $APP_ROOT ; chown -R deploy:deploy $APP_ROOT
 
+USER deploy
 WORKDIR $APP_ROOT
 COPY entrypoint.sh $HOME/entrypoint.sh
 ENTRYPOINT ["/home/deploy/entrypoint.sh"]
