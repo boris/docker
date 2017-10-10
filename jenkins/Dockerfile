@@ -14,8 +14,7 @@ RUN mkdir -p /var/log/supervisor
 VOLUME /var/jenkins_home
 
 # Get Jenkins
-ENV JENKINS_VERSION 1.625.3
-ENV JENKINS_SHA 537d910f541c25a23499b222ccd37ca25e074a0c
+ENV JENKINS_VERSION latest
 RUN curl -fL http://mirrors.jenkins-ci.org/war-stable/$JENKINS_VERSION/jenkins.war -o /usr/share/jenkins/jenkins.war 
 
 ENV JENKINS_UC https://updates.jenkins-ci.org
