@@ -1,0 +1,19 @@
+version: '3'
+services:
+    consul:
+        image: consul
+        ports:
+            - 8400:8400
+            - 8500:8500
+            - 8600:53/udp
+        hostname: consul
+
+    vault:
+        image: boris/vault:1.0
+        links:
+            - "consul:consul"
+        environment:
+            VAULT_ADDR: "http://127.0.0.1:8200"
+        ports:
+            - 8200:8200
+
