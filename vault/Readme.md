@@ -1,6 +1,6 @@
 # Vault + Consul on Docker
 
-Ussage:
+Usage:
 
     docker-compose up
     export VAULT_ADDR="http://127.0.0.1:8200"
@@ -8,5 +8,11 @@ Ussage:
     vault unseal first_key
     vault unseal second_key
     vault auth (use Initial Root Token)
-    vault write secrets/foo value=bar
-    vautl read secrets/foo
+
+Examples:
+
+    vault write secret/foo value=bar
+    vault read secret/foo
+    vault write secret/path/to/secret value=secret
+    vault read secret/path/to/secret
+    vault write secret/path/to/string value="This is a string"
