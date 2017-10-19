@@ -1,0 +1,13 @@
+version: '3'
+services:
+    vault:
+        image: boris/vault:1.0
+        environment:
+            VAULT_ADDR: "http://127.0.0.1:8200"
+        ports:
+            - 8200:8200
+        volumes:
+            - data_vault:/data/vault
+
+volumes:
+    data_vault:
