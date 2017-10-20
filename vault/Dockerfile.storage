@@ -1,8 +1,0 @@
-FROM vault
-
-COPY config/vault.conf /vault/config/vault.conf
-
-RUN mkdir -p /data/vault
-RUN chown -R vault: /data
-
-CMD ["vault", "server", "-config=/vault/config/vault.conf"]
