@@ -8,10 +8,10 @@ services:
             - 8600:53/udp
         hostname: consul
         volumes:
-            - consul:/consul
+            - consul:/consul/data
 
     vault:
-        image: boris/vault:1.0
+        image: boris/vault:1.2
         links:
             - "consul:consul"
         environment:
