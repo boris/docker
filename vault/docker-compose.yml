@@ -11,16 +11,18 @@ services:
             - consul:/consul/data
 
     vault:
+        depends_on: 
+            - consul
         image: boris/vault:1.2
         links:
             - "consul:consul"
         environment:
             VAULT_ADDR: "http://127.0.0.1:8200"
+            SKIP_SETCAP: "true"
         ports:
             - 8200:8200
         volumes:
             - vault:/vault
-        restart: always
 
 volumes:
     consul:
