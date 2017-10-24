@@ -1,7 +1,7 @@
 version: '3'
 services:
     consul:
-        image: consul
+        image: boris/consul:1.2
         ports:
             - 8400:8400
             - 8500:8500
@@ -20,6 +20,7 @@ services:
             - 8200:8200
         volumes:
             - vault:/vault
+        restart: always
 
 volumes:
     consul:
