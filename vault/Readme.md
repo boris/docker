@@ -16,3 +16,9 @@ Examples:
     vault write secret/path/to/secret value=secret
     vault read secret/path/to/secret
     vault write secret/path/to/string value="This is a string"
+
+
+## Files
+- `docker-compose.storage.yml` uses a "storage" backend, not recomended for
+  production.
+- `docker-compose.yml` could be used to deploy a service to swarm.
