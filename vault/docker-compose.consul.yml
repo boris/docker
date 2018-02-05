@@ -23,6 +23,15 @@ services:
             - 8200:8200
         volumes:
             - vault:/vault
+    
+    ui:
+	depends_on:
+	    - vault
+	environment:
+	    VAULT_URL_DEFAULT: "http://172.17.0.1:8200"
+	image: djenriquez/vault-ui
+	ports:
+	    - 8000:8000
 
 volumes:
     consul:
