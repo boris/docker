@@ -1,4 +1,4 @@
-FROM vault:0.9.1
+FROM vault:0.9.5
 
 COPY config/vault.conf /vault/config/vault.conf
 COPY config/wait-for-it.sh /wfi.sh
