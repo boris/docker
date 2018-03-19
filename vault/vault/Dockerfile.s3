@@ -1,4 +1,4 @@
-FROM vault:0.9.1
+FROM vault:0.9.5
 
 COPY config/vault.s3.conf /vault/config/vault.conf
 
