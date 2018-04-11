@@ -1,4 +1,4 @@
-FROM vault:0.9.5
+FROM vault:0.10.0
 
 COPY config/vault.conf /vault/config/vault.conf
 
