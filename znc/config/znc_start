@@ -1,5 +1,11 @@
 #!/bin/bash
 set -e
 
+echo "get SSL cert"
+curl -o ~/.znc/users/boris/networks/freenode/moddata/cert/freenode.pem http://irc.zsh.io/files/freenode.pem
+
+# Start tor
+sudo service tor start
+
 echo "running znc server"
-exec znc -f -d /home/znc/.znc
+exec proxychains znc -f -d /home/znc/.znc
