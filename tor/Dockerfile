@@ -2,11 +2,11 @@
 FROM ubuntu:latest
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
-ENV TORNAME tor-0.2.7.6
+ENV TORNAME tor-0.4.6.9
 
 RUN apt-get update
-RUN apt-get install -yq --no-install-recommends libwww-perl build-essential libevent-dev libssl-dev
-RUN GET https://www.torproject.org/dist/${TORNAME}.tar.gz | tar xz -C /tmp
+RUN apt-get install -yq --no-install-recommends libwww-perl build-essential libevent-dev libssl-dev zlib1g-dev
+RUN GET https://dist.torproject.org/${TORNAME}.tar.gz | tar xz -C /tmp
 
 RUN cd /tmp/${TORNAME} && ./configure
 RUN cd /tmp/${TORNAME} && make
