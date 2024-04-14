@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
-ENV TORNAME tor-0.4.6.9
+ENV TORNAME tor-0.4.8.9
 
 RUN apt-get update
 RUN apt-get install -yq --no-install-recommends libwww-perl build-essential libevent-dev libssl-dev zlib1g-dev
