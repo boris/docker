@@ -1,5 +1,4 @@
 FROM alpine:edge
-MAINTAINER Boris Quiroz <boris@insert-coin.org>
 
 RUN apk update
 RUN apk add tor
@@ -9,4 +8,4 @@ RUN echo "SocksPort 0.0.0.0:9150" >> /etc/torrc
 
 EXPOSE 9150
 
-CMD tor -f /etc/torrc
+CMD ["tor", "-f", "/etc/torrc"]
